@@ -1,0 +1,20 @@
+const hora = document.querySelector(".hour")
+const minu = document.querySelector(".min")
+const sec = document.querySelector(".sec")
+
+function getTime(){
+    const tempo = new Date()
+
+    const getHoraRot =(360/12)*tempo.getHours()
+    const getMinuRot =(360/60)*tempo.getMinutes()
+    const getSecRot =(360/60)*tempo.getSeconds()
+
+    hora.style.transform =`rotate(${getHoraRot}deg)`
+    minu.style.transform =`rotate(${getMinuRot}deg)`
+    sec.style.transform =`rotate(${getSecRot}deg)`
+}
+
+setInterval(() => {
+    getTime()
+}, 1000)
+getTime()
